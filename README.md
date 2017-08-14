@@ -52,21 +52,21 @@ cscope quickfix window without jumping to the first result (please correct me if
 
 All bindings are of the form `<Leader>fX`, where `X` is one of the letter arguments to `:cscope find`:
 
-`s`: Find this C symbol
-`g`: Find this definition
-`d`: Find functions called by this function
-`c`: Find functions calling this function
-`t`: Find this text string
-`e`: Find this egrep pattern
-`f`: Find this file
-`i`: Find files #including this file
-`a`: Find places where this symbol is assigned a value
+* `s`: Find this C symbol
+* `g`: Find this definition
+* `d`: Find functions called by this function
+* `c`: Find functions calling this function
+* `t`: Find this text string
+* `e`: Find this egrep pattern
+* `f`: Find this file
+* `i`: Find files #including this file
+* `a`: Find places where this symbol is assigned a value
 
 See `:help cscope-find` for details.
 
 If you want to create your own bindings, they all follow this form:
 
-  nnoremap <Leader>fs :cscope find s <C-R>=expand("<cword>")<CR><CR>:botright cwindow<CR>
+    nnoremap <Leader>fs :cscope find s <C-R>=expand("<cword>")<CR><CR>:botright cwindow<CR>
 
 ## Author
 
