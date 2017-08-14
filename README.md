@@ -24,8 +24,6 @@ Change the cscope command (default is `cscope -R -b`):
 
     let g:cscope_command = 'starscope -e cscope'
 
-Since I only use starscope
-
 Set the path for the cscope file to read (defaults to `cscope.out` in current directory):
 
     let g:cscope_file = '.git/cscope.out'
