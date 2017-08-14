@@ -10,6 +10,10 @@ if !exists('g:cscope_file')
   let g:cscope_file = 'cscope.out'
 endif
 
+if !exists('g:cscope_command')
+  let g:cscope_command = 'cscope -R -b'
+endif
+
 set nocscopetag
 set cscopeverbose
 
@@ -42,4 +46,21 @@ function! s:CscopeReload()
   set cscopeverbose
 endfunction
 
-command! CscopeReload :call s:CscopeReload()
+function! s:CscopeRebuild()
+  silent! execute '!' g:cscope_command
+  if v:shell_error
+    redraw!
+    echohl ErrorMsg | echo "Unable to run cscope command." | echohl None
+  else
+    if filereadable(g:cscope_file)
+      redraw!
+      call s:CscopeReload()
+    else
+      redraw!
+      echohl ErrorMsg | echo "Unable to read cscope database." | echohl None
+    endif
+  endif
+endfunction
+
+command! CscopeReload call s:CscopeReload()
+command! CscopeRebuild call s:CscopeRebuild()

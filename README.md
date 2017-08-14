@@ -20,6 +20,12 @@ This plugin is in its infancy, and (probably better) alternatives exist:
 
 ## Options
 
+Change the cscope command (default is `cscope -R -b`):
+
+    let g:cscope_command = 'starscope -e cscope'
+
+Since I only use starscope
+
 Set the path for the cscope file to read (defaults to `cscope.out` in current directory):
 
     let g:cscope_file = '.git/cscope.out'
@@ -31,6 +37,10 @@ Disable the default keymappings (although that's really all this plugin is good 
 ## Usage
 
 ### Commands
+
+Regenerate and reload the database (this runs the cscope command as configured):
+
+    :CscopeRebuild
 
 Reload/refresh the current cscope database (e.g. after manually updating the cscope file):
 
