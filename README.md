@@ -12,7 +12,7 @@ This plugin is in its infancy, and (probably better) alternatives exist:
 [tpope/vim-pathogen](https://github.com/tpope/vim-pathogen):
 
     cd ~/.vim/bundle
-    git clone https://github.com/fweep/vim-tabber.git
+    git clone https://github.com/fweep/vim-cscope.git
 
 [junegunn/vim-plug](https://github.com/junegunn/vim-plug):
 
